@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+*.log
+.sass-cache/
+
+# Local working files, not part of the submission
+Screenshot*.png
+localhost-3000.png
+lite-server-terminal.png
+src/probe*.html
+src/main.css
+src/main.scss
+*.zip

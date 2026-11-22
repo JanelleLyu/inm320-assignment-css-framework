@@ -1,0 +1,16 @@
+{
+  "name": "inm320-assignment-css-framework",
+  "version": "1.0.0",
+  "description": "INM320 Assignment - CSS Framework - Bootstrap dashboard recreation",
+  "scripts": {
+    "start": "lite-server --baseDir=\"src\"",
+    "sass": "sass src/assets/scss/main.scss src/assets/css/main.css --style=expanded --no-source-map"
+  },
+  "author": "Jiangliu Lyu",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "sass": "^1.77.8"
+  }
+}

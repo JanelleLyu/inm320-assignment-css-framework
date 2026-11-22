@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | INM320 CSS Framework</title>
+
+  <!-- Bootstrap 5.3 framework -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Bootstrap Icons -->
+  <!-- Web font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <!-- Compiled Sass theme -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside
+      class="app-sidebar offcanvas-lg offcanvas-start"
+      id="appSidebar"
+      tabindex="-1"
+      aria-labelledby="appSidebarLabel"
+    >
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="sidebar-brand mb-0" id="appSidebarLabel">Purity UI</h2>
+        <button
+          class="btn-close"
+          type="button"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#appSidebar"
+          aria-label="Close menu"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <a class="sidebar-brand d-none d-lg-flex mb-4" href="#">
+          <img class="brand-logo" src="assets/icons/logo-creative-tim.svg" width="22" height="22" alt="Purity UI Dashboard brand mark">
+          <span class="brand-text">PURITY UI DASHBOARD</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="list-unstyled mb-4">
+            <li class="mb-1">
+              <a class="sidebar-link active" href="#" aria-current="page">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-dashboard.svg" width="30" height="30" alt="Dashboard navigation icon">
+                Dashboard
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="sidebar-link" href="#">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-tables.svg" width="30" height="30" alt="Tables navigation icon">
+                Tables
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="sidebar-link" href="#">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-billing.svg" width="30" height="30" alt="Billing navigation icon">
+                Billing
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="sidebar-link" href="#">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-rtl.svg" width="30" height="30" alt="RTL navigation icon">
+                RTL
+              </a>
+            </li>
+          </ul>
+
+          <p class="sidebar-section-title">Account Pages</p>
+          <ul class="list-unstyled">
+            <li class="mb-1">
+              <a class="sidebar-link" href="#">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-profile.svg" width="30" height="30" alt="Profile navigation icon">
+                Profile
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="sidebar-link" href="#">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-signin.svg" width="30" height="30" alt="Sign in navigation icon">
+                Sign In
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="sidebar-link" href="#">
+                <img class="sidebar-icon-img" src="assets/icons/nav/nav-signup.svg" width="30" height="30" alt="Sign up navigation icon">
+                Sign Up
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="app-main">
+
+      <!-- Page header -->
+      <header class="container-fluid px-3 px-lg-4 pt-4 pb-3">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+          <div class="d-flex align-items-center gap-2">
+            <button
+              class="btn btn-light d-lg-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#appSidebar"
+              aria-controls="appSidebar"
+              aria-label="Open menu"
+            >
+              <svg class="ui-icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/></svg>
+            </button>
+            <div>
+              <nav aria-label="Breadcrumb">
+                <p class="page-breadcrumb mb-1"><span class="crumb-root">Pages</span><span class="crumb-divider">/</span><span class="crumb-current">Dashboard</span></p>
+              </nav>
+              <h1 class="page-title mb-0">Dashboard</h1>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            <form class="search-box d-flex align-items-center px-3 py-1" role="search">
+              <label class="visually-hidden" for="pageSearch">Search dashboard</label>
+              <svg class="ui-icon ui-icon-sm text-secondary me-2" viewBox="0 0 512 512" aria-hidden="true"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+              <input
+                class="form-control form-control-sm"
+                id="pageSearch"
+                type="search"
+                placeholder="Type here..."
+              >
+            </form>
+            <a class="header-link d-none d-md-inline" href="#">
+              <svg class="ui-icon ui-icon-sm me-1" viewBox="0 0 512 512" aria-hidden="true"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg> Sign In
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="container-fluid px-3 px-lg-4 pb-4">
+
+        <!-- ================= KPI CARDS ================= -->
+        <section class="row g-3 mb-3" aria-label="Key performance indicators">
+
+          <div class="col-6 col-lg-3">
+            <article class="app-card h-100">
+              <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                <div>
+                  <p class="kpi-label mb-1">Today's Revenue</p>
+                  <p class="kpi-value mb-0">
+                    $53,000 <span class="kpi-delta is-up">+55%</span>
+                  </p>
+                </div>
+                <img class="kpi-icon" src="assets/icons/kpi-wallet.svg" width="56" height="56" alt="Wallet icon for today's revenue">
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <article class="app-card h-100">
+              <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                <div>
+                  <p class="kpi-label mb-1">Today's Users</p>
+                  <p class="kpi-value mb-0">
+                    2,300 <span class="kpi-delta is-up">+5%</span>
+                  </p>
+                </div>
+                <img class="kpi-icon" src="assets/icons/kpi-users.svg" width="56" height="56" alt="Group icon for today's users">
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <article class="app-card h-100">
+              <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                <div>
+                  <p class="kpi-label mb-1">New Clients</p>
+                  <p class="kpi-value mb-0">
+                    +3,052 <span class="kpi-delta is-down">-14%</span>
+                  </p>
+                </div>
+                <img class="kpi-icon" src="assets/icons/kpi-clients.svg" width="56" height="56" alt="Document icon for new clients">
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <article class="app-card h-100">
+              <div class="card-body d-flex justify-content-between align-items-center gap-2">
+                <div>
+                  <p class="kpi-label mb-1">Total Sales</p>
+                  <p class="kpi-value mb-0">
+                    $173,000 <span class="kpi-delta is-up">+8%</span>
+                  </p>
+                </div>
+                <img class="kpi-icon" src="assets/icons/kpi-sales.svg" width="56" height="56" alt="Cart icon for total sales">
+              </div>
+            </article>
+          </div>
+
+        </section>
+
+        <!-- ================= SWITCHED BLOCKS ================= -->
+        <!-- Assignment change: Active Users and Sales Overview are
+             switched and each block takes 50% of the row. -->
+        <section class="row g-3 mb-3" aria-label="Sales and users overview">
+
+          <!-- Sales overview - moved to the first position, 50% -->
+          <div class="col-12 col-lg-6">
+            <article class="app-card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5 mb-1">Sales overview</h2>
+                <p class="chart-caption mb-3">
+                  <span class="text-success">(+5)</span> more in 2021
+                </p>
+
+                <div class="chart-frame">
+                  <ul class="chart-axis" aria-hidden="true">
+                    <li>500</li>
+                    <li>400</li>
+                    <li>300</li>
+                    <li>200</li>
+                    <li>100</li>
+                    <li>0</li>
+                  </ul>
+
+                  <svg
+                    class="area-chart"
+                    viewBox="0 0 884 297"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Sales overview area chart"
+                  >
+                    <defs>
+                      <linearGradient id="salesNavy" x1="461" y1="7.5" x2="461" y2="257.25" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2D3748" stop-opacity="0.36"/>
+                        <stop offset="1" stop-color="#2D3748" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="salesMint" x1="460.5" y1="23" x2="460.5" y2="257" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4FD1C5" stop-opacity="0.54"/>
+                        <stop offset="1" stop-color="#4FD1C5" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M41.5 257L43.2479 257M880.5 257L878.753 257M46.7438 257L50.2396 257M53.7354 257L57.2313 257M60.7271 257L64.2229 257M67.7188 257L71.2146 257M74.7104 257L78.2063 257M81.7021 257L85.1979 257M88.6938 257L92.1896 257M95.6854 257L99.1813 257M102.677 257L106.173 257M109.669 257L113.165 257M116.66 257L120.156 257M123.652 257L127.148 257M130.644 257L134.14 257M137.635 257L141.131 257M144.627 257L148.123 257M151.619 257L155.115 257M158.61 257L162.106 257M165.602 257L169.098 257M172.594 257L176.09 257M179.585 257L183.081 257M186.577 257L190.073 257M193.569 257L197.065 257M200.56 257L204.056 257M207.552 257L211.048 257M214.544 257L218.04 257M221.535 257L225.031 257M228.527 257L232.023 257M235.519 257L239.015 257M242.51 257L246.006 257M249.502 257L252.998 257M256.494 257L259.99 257M263.485 257L266.981 257M270.477 257L273.973 257M277.469 257L280.965 257M284.46 257L287.956 257M291.452 257L294.948 257M298.444 257L301.94 257M305.435 257L308.931 257M312.427 257L315.923 257M319.419 257L322.915 257M326.41 257L329.906 257M333.402 257L336.898 257M340.394 257L343.889 257M347.385 257L350.881 257M354.377 257L357.873 257M361.369 257L364.864 257M368.36 257L371.856 257M375.352 257L378.848 257M382.343 257L385.839 257M389.335 257L392.831 257M396.327 257L399.823 257M403.318 257L406.814 257M410.31 257L413.806 257M417.302 257L420.797 257M424.293 257L427.789 257M431.285 257L434.781 257M438.277 257L441.772 257M445.268 257L448.764 257M452.26 257L455.756 257M459.251 257L462.747 257M466.243 257L469.739 257M473.235 257L476.731 257M480.226 257L483.722 257M487.218 257L490.714 257M494.21 257L497.705 257M501.201 257L504.697 257M508.193 257L511.689 257M515.185 257L518.68 257M522.176 257L525.672 257M529.168 257L532.664 257M536.16 257L539.655 257M543.151 257L546.647 257M550.143 257L553.639 257M557.134 257L560.63 257M564.126 257L567.622 257M571.118 257L574.614 257M578.11 257L581.605 257M585.101 257L588.597 257M592.093 257L595.589 257M599.085 257L602.58 257M606.076 257L609.572 257M613.068 257L616.564 257M620.06 257L623.556 257M627.051 257L630.547 257M634.043 257L637.539 257M641.035 257L644.531 257M648.027 257L651.522 257M655.018 257L658.514 257M662.01 257L665.506 257M669.002 257L672.497 257M675.993 257L679.489 257M682.985 257L686.481 257M689.977 257L693.473 257M696.968 257L700.464 257M703.96 257L707.456 257M710.952 257L714.448 257M717.944 257L721.439 257M724.935 257L728.431 257M731.927 257L735.423 257M738.919 257L742.414 257M745.91 257L749.406 257M752.902 257L756.398 257M759.894 257L763.39 257M766.885 257L770.381 257M773.877 257L777.373 257M780.869 257L784.365 257M787.861 257L791.356 257M794.852 257L798.348 257M801.844 257L805.34 257M808.836 257L812.331 257M815.827 257L819.323 257M822.819 257L826.315 257M829.811 257L833.307 257M836.802 257L840.298 257M843.794 257L847.29 257M850.786 257L854.282 257M857.778 257L861.273 257M864.769 257L868.265 257M871.761 257L875.257 257" stroke-linecap="round" stroke-linejoin="round" stroke="#E2E8F0"/>
+                    <path d="M41.5 207L43.2479 207M880.5 207L878.753 207M46.7438 207L50.2396 207M53.7354 207L57.2313 207M60.7271 207L64.2229 207M67.7188 207L71.2146 207M74.7104 207L78.2063 207M81.7021 207L85.1979 207M88.6938 207L92.1896 207M95.6854 207L99.1813 207M102.677 207L106.173 207M109.669 207L113.165 207M116.66 207L120.156 207M123.652 207L127.148 207M130.644 207L134.14 207M137.635 207L141.131 207M144.627 207L148.123 207M151.619 207L155.115 207M158.61 207L162.106 207M165.602 207L169.098 207M172.594 207L176.09 207M179.585 207L183.081 207M186.577 207L190.073 207M193.569 207L197.065 207M200.56 207L204.056 207M207.552 207L211.048 207M214.544 207L218.04 207M221.535 207L225.031 207M228.527 207L232.023 207M235.519 207L239.015 207M242.51 207L246.006 207M249.502 207L252.998 207M256.494 207L259.99 207M263.485 207L266.981 207M270.477 207L273.973 207M277.469 207L280.965 207M284.46 207L287.956 207M291.452 207L294.948 207M298.444 207L301.94 207M305.435 207L308.931 207M312.427 207L315.923 207M319.419 207L322.915 207M326.41 207L329.906 207M333.402 207L336.898 207M340.394 207L343.889 207M347.385 207L350.881 207M354.377 207L357.873 207M361.369 207L364.864 207M368.36 207L371.856 207M375.352 207L378.848 207M382.343 207L385.839 207M389.335 207L392.831 207M396.327 207L399.823 207M403.318 207L406.814 207M410.31 207L413.806 207M417.302 207L420.797 207M424.293 207L427.789 207M431.285 207L434.781 207M438.277 207L441.772 207M445.268 207L448.764 207M452.26 207L455.756 207M459.251 207L462.747 207M466.243 207L469.739 207M473.235 207L476.731 207M480.226 207L483.722 207M487.218 207L490.714 207M494.21 207L497.705 207M501.201 207L504.697 207M508.193 207L511.689 207M515.185 207L518.68 207M522.176 207L525.672 207M529.168 207L532.664 207M536.16 207L539.655 207M543.151 207L546.647 207M550.143 207L553.639 207M557.134 207L560.63 207M564.126 207L567.622 207M571.118 207L574.614 207M578.11 207L581.605 207M585.101 207L588.597 207M592.093 207L595.589 207M599.085 207L602.58 207M606.076 207L609.572 207M613.068 207L616.564 207M620.06 207L623.556 207M627.051 207L630.547 207M634.043 207L637.539 207M641.035 207L644.531 207M648.027 207L651.522 207M655.018 207L658.514 207M662.01 207L665.506 207M669.002 207L672.497 207M675.993 207L679.489 207M682.985 207L686.481 207M689.977 207L693.473 207M696.968 207L700.464 207M703.96 207L707.456 207M710.952 207L714.448 207M717.944 207L721.439 207M724.935 207L728.431 207M731.927 207L735.423 207M738.919 207L742.414 207M745.91 207L749.406 207M752.902 207L756.398 207M759.894 207L763.39 207M766.885 207L770.381 207M773.877 207L777.373 207M780.869 207L784.365 207M787.861 207L791.356 207M794.852 207L798.348 207M801.844 207L805.34 207M808.836 207L812.331 207M815.827 207L819.323 207M822.819 207L826.315 207M829.811 207L833.307 207M836.802 207L840.298 207M843.794 207L847.29 207M850.786 207L854.282 207M857.778 207L861.273 207M864.769 207L868.265 207M871.761 207L875.257 207" stroke-linecap="round" stroke-linejoin="round" stroke="#E2E8F0"/>
+                    <path d="M41.5 157L43.2479 157M880.5 157L878.753 157M46.7438 157L50.2396 157M53.7354 157L57.2313 157M60.7271 157L64.2229 157M67.7188 157L71.2146 157M74.7104 157L78.2063 157M81.7021 157L85.1979 157M88.6938 157L92.1896 157M95.6854 157L99.1813 157M102.677 157L106.173 157M109.669 157L113.165 157M116.66 157L120.156 157M123.652 157L127.148 157M130.644 157L134.14 157M137.635 157L141.131 157M144.627 157L148.123 157M151.619 157L155.115 157M158.61 157L162.106 157M165.602 157L169.098 157M172.594 157L176.09 157M179.585 157L183.081 157M186.577 157L190.073 157M193.569 157L197.065 157M200.56 157L204.056 157M207.552 157L211.048 157M214.544 157L218.04 157M221.535 157L225.031 157M228.527 157L232.023 157M235.519 157L239.015 157M242.51 157L246.006 157M249.502 157L252.998 157M256.494 157L259.99 157M263.485 157L266.981 157M270.477 157L273.973 157M277.469 157L280.965 157M284.46 157L287.956 157M291.452 157L294.948 157M298.444 157L301.94 157M305.435 157L308.931 157M312.427 157L315.923 157M319.419 157L322.915 157M326.41 157L329.906 157M333.402 157L336.898 157M340.394 157L343.889 157M347.385 157L350.881 157M354.377 157L357.873 157M361.369 157L364.864 157M368.36 157L371.856 157M375.352 157L378.848 157M382.343 157L385.839 157M389.335 157L392.831 157M396.327 157L399.823 157M403.318 157L406.814 157M410.31 157L413.806 157M417.302 157L420.797 157M424.293 157L427.789 157M431.285 157L434.781 157M438.277 157L441.772 157M445.268 157L448.764 157M452.26 157L455.756 157M459.251 157L462.747 157M466.243 157L469.739 157M473.235 157L476.731 157M480.226 157L483.722 157M487.218 157L490.714 157M494.21 157L497.705 157M501.201 157L504.697 157M508.193 157L511.689 157M515.185 157L518.68 157M522.176 157L525.672 157M529.168 157L532.664 157M536.16 157L539.655 157M543.151 157L546.647 157M550.143 157L553.639 157M557.134 157L560.63 157M564.126 157L567.622 157M571.118 157L574.614 157M578.11 157L581.605 157M585.101 157L588.597 157M592.093 157L595.589 157M599.085 157L602.58 157M606.076 157L609.572 157M613.068 157L616.564 157M620.06 157L623.556 157M627.051 157L630.547 157M634.043 157L637.539 157M641.035 157L644.531 157M648.027 157L651.522 157M655.018 157L658.514 157M662.01 157L665.506 157M669.002 157L672.497 157M675.993 157L679.489 157M682.985 157L686.481 157M689.977 157L693.473 157M696.968 157L700.464 157M703.96 157L707.456 157M710.952 157L714.448 157M717.944 157L721.439 157M724.935 157L728.431 157M731.927 157L735.423 157M738.919 157L742.414 157M745.91 157L749.406 157M752.902 157L756.398 157M759.894 157L763.39 157M766.885 157L770.381 157M773.877 157L777.373 157M780.869 157L784.365 157M787.861 157L791.356 157M794.852 157L798.348 157M801.844 157L805.34 157M808.836 157L812.331 157M815.827 157L819.323 157M822.819 157L826.315 157M829.811 157L833.307 157M836.802 157L840.298 157M843.794 157L847.29 157M850.786 157L854.282 157M857.778 157L861.273 157M864.769 157L868.265 157M871.761 157L875.257 157" stroke-linecap="round" stroke-linejoin="round" stroke="#E2E8F0"/>
+                    <path d="M41.5 107L43.2479 107M880.5 107L878.753 107M46.7438 107L50.2396 107M53.7354 107L57.2313 107M60.7271 107L64.2229 107M67.7188 107L71.2146 107M74.7104 107L78.2063 107M81.7021 107L85.1979 107M88.6938 107L92.1896 107M95.6854 107L99.1813 107M102.677 107L106.173 107M109.669 107L113.165 107M116.66 107L120.156 107M123.652 107L127.148 107M130.644 107L134.14 107M137.635 107L141.131 107M144.627 107L148.123 107M151.619 107L155.115 107M158.61 107L162.106 107M165.602 107L169.098 107M172.594 107L176.09 107M179.585 107L183.081 107M186.577 107L190.073 107M193.569 107L197.065 107M200.56 107L204.056 107M207.552 107L211.048 107M214.544 107L218.04 107M221.535 107L225.031 107M228.527 107L232.023 107M235.519 107L239.015 107M242.51 107L246.006 107M249.502 107L252.998 107M256.494 107L259.99 107M263.485 107L266.981 107M270.477 107L273.973 107M277.469 107L280.965 107M284.46 107L287.956 107M291.452 107L294.948 107M298.444 107L301.94 107M305.435 107L308.931 107M312.427 107L315.923 107M319.419 107L322.915 107M326.41 107L329.906 107M333.402 107L336.898 107M340.394 107L343.889 107M347.385 107L350.881 107M354.377 107L357.873 107M361.369 107L364.864 107M368.36 107L371.856 107M375.352 107L378.848 107M382.343 107L385.839 107M389.335 107L392.831 107M396.327 107L399.823 107M403.318 107L406.814 107M410.31 107L413.806 107M417.302 107L420.797 107M424.293 107L427.789 107M431.285 107L434.781 107M438.277 107L441.772 107M445.268 107L448.764 107M452.26 107L455.756 107M459.251 107L462.747 107M466.243 107L469.739 107M473.235 107L476.731 107M480.226 107L483.722 107M487.218 107L490.714 107M494.21 107L497.705 107M501.201 107L504.697 107M508.193 107L511.689 107M515.185 107L518.68 107M522.176 107L525.672 107M529.168 107L532.664 107M536.16 107L539.655 107M543.151 107L546.647 107M550.143 107L553.639 107M557.134 107L560.63 107M564.126 107L567.622 107M571.118 107L574.614 107M578.11 107L581.605 107M585.101 107L588.597 107M592.093 107L595.589 107M599.085 107L602.58 107M606.076 107L609.572 107M613.068 107L616.564 107M620.06 107L623.556 107M627.051 107L630.547 107M634.043 107L637.539 107M641.035 107L644.531 107M648.027 107L651.522 107M655.018 107L658.514 107M662.01 107L665.506 107M669.002 107L672.497 107M675.993 107L679.489 107M682.985 107L686.481 107M689.977 107L693.473 107M696.968 107L700.464 107M703.96 107L707.456 107M710.952 107L714.448 107M717.944 107L721.439 107M724.935 107L728.431 107M731.927 107L735.423 107M738.919 107L742.414 107M745.91 107L749.406 107M752.902 107L756.398 107M759.894 107L763.39 107M766.885 107L770.381 107M773.877 107L777.373 107M780.869 107L784.365 107M787.861 107L791.356 107M794.852 107L798.348 107M801.844 107L805.34 107M808.836 107L812.331 107M815.827 107L819.323 107M822.819 107L826.315 107M829.811 107L833.307 107M836.802 107L840.298 107M843.794 107L847.29 107M850.786 107L854.282 107M857.778 107L861.273 107M864.769 107L868.265 107M871.761 107L875.257 107" stroke-linecap="round" stroke-linejoin="round" stroke="#E2E8F0"/>
+                    <path d="M41.5 57L43.2479 57M880.5 57.0001L878.753 57.0001M46.7438 57L50.2396 57M53.7354 57L57.2313 57M60.7271 57L64.2229 57M67.7188 57L71.2146 57M74.7104 57L78.2063 57M81.7021 57L85.1979 57M88.6938 57L92.1896 57M95.6854 57L99.1813 57M102.677 57L106.173 57M109.669 57L113.165 57M116.66 57L120.156 57M123.652 57L127.148 57M130.644 57L134.14 57M137.635 57L141.131 57M144.627 57L148.123 57M151.619 57L155.115 57M158.61 57L162.106 57M165.602 57L169.098 57M172.594 57L176.09 57M179.585 57L183.081 57M186.577 57L190.073 57M193.569 57L197.065 57M200.56 57L204.056 57M207.552 57L211.048 57M214.544 57L218.04 57M221.535 57L225.031 57M228.527 57L232.023 57M235.519 57L239.015 57M242.51 57L246.006 57M249.502 57L252.998 57M256.494 57L259.99 57M263.485 57L266.981 57M270.477 57L273.973 57M277.469 57L280.965 57M284.46 57L287.956 57M291.452 57L294.948 57M298.444 57L301.94 57M305.435 57L308.931 57M312.427 57L315.923 57M319.419 57L322.915 57M326.41 57L329.906 57M333.402 57L336.898 57M340.394 57L343.889 57M347.385 57L350.881 57M354.377 57L357.873 57M361.369 57L364.864 57M368.36 57L371.856 57M375.352 57L378.848 57M382.343 57L385.839 57M389.335 57L392.831 57M396.327 57L399.823 57M403.318 57L406.814 57M410.31 57L413.806 57M417.302 57L420.797 57M424.293 57L427.789 57M431.285 57L434.781 57M438.277 57L441.772 57M445.268 57L448.764 57M452.26 57L455.756 57M459.251 57L462.747 57M466.243 57L469.739 57M473.235 57L476.731 57M480.226 57L483.722 57M487.218 57L490.714 57M494.21 57L497.705 57M501.201 57L504.697 57M508.193 57L511.689 57M515.185 57L518.68 57M522.176 57L525.672 57M529.168 57L532.664 57M536.16 57L539.655 57M543.151 57L546.647 57M550.143 57L553.639 57M557.134 57L560.63 57M564.126 57L567.622 57M571.118 57L574.614 57M578.11 57L581.605 57M585.101 57L588.597 57M592.093 57L595.589 57M599.085 57L602.58 57M606.076 57L609.572 57M613.068 57.0001L616.564 57.0001M620.06 57.0001L623.556 57.0001M627.051 57.0001L630.547 57.0001M634.043 57.0001L637.539 57.0001M641.035 57.0001L644.531 57.0001M648.027 57.0001L651.522 57.0001M655.018 57.0001L658.514 57.0001M662.01 57.0001L665.506 57.0001M669.002 57.0001L672.497 57.0001M675.993 57.0001L679.489 57.0001M682.985 57.0001L686.481 57.0001M689.977 57.0001L693.473 57.0001M696.968 57.0001L700.464 57.0001M703.96 57.0001L707.456 57.0001M710.952 57.0001L714.448 57.0001M717.944 57.0001L721.439 57.0001M724.935 57.0001L728.431 57.0001M731.927 57.0001L735.423 57.0001M738.919 57.0001L742.414 57.0001M745.91 57.0001L749.406 57.0001M752.902 57.0001L756.398 57.0001M759.894 57.0001L763.39 57.0001M766.885 57.0001L770.381 57.0001M773.877 57.0001L777.373 57.0001M780.869 57.0001L784.365 57.0001M787.861 57.0001L791.356 57.0001M794.852 57.0001L798.348 57.0001M801.844 57.0001L805.34 57.0001M808.836 57.0001L812.331 57.0001M815.827 57.0001L819.323 57.0001M822.819 57.0001L826.315 57.0001M829.811 57.0001L833.307 57.0001M836.802 57.0001L840.298 57.0001M843.794 57.0001L847.29 57.0001M850.786 57.0001L854.282 57.0001M857.778 57.0001L861.273 57.0001M864.769 57.0001L868.265 57.0001M871.761 57.0001L875.257 57.0001" stroke-linecap="round" stroke-linejoin="round" stroke="#E2E8F0"/>
+                    <path d="M41.5 7L43.2479 7M880.5 7.00007L878.753 7.00007M46.7438 7L50.2396 7M53.7354 7L57.2313 7M60.7271 7L64.2229 7M67.7188 7L71.2146 7M74.7104 7L78.2063 7M81.7021 7L85.1979 7M88.6938 7L92.1896 7M95.6854 7L99.1813 7.00001M102.677 7.00001L106.173 7.00001M109.669 7.00001L113.165 7.00001M116.66 7.00001L120.156 7.00001M123.652 7.00001L127.148 7.00001M130.644 7.00001L134.14 7.00001M137.635 7.00001L141.131 7.00001M144.627 7.00001L148.123 7.00001M151.619 7.00001L155.115 7.00001M158.61 7.00001L162.106 7.00001M165.602 7.00001L169.098 7.00001M172.594 7.00001L176.09 7.00001M179.585 7.00001L183.081 7.00001M186.577 7.00001L190.073 7.00001M193.569 7.00001L197.065 7.00001M200.56 7.00001L204.056 7.00001M207.552 7.00001L211.048 7.00001M214.544 7.00002L218.04 7.00002M221.535 7.00002L225.031 7.00002M228.527 7.00002L232.023 7.00002M235.519 7.00002L239.015 7.00002M242.51 7.00002L246.006 7.00002M249.502 7.00002L252.998 7.00002M256.494 7.00002L259.99 7.00002M263.485 7.00002L266.981 7.00002M270.477 7.00002L273.973 7.00002M277.469 7.00002L280.965 7.00002M284.46 7.00002L287.956 7.00002M291.452 7.00002L294.948 7.00002M298.444 7.00002L301.94 7.00002M305.435 7.00002L308.931 7.00002M312.427 7.00002L315.923 7.00002M319.419 7.00002L322.915 7.00002M326.41 7.00002L329.906 7.00003M333.402 7.00003L336.898 7.00003M340.394 7.00003L343.889 7.00003M347.385 7.00003L350.881 7.00003M354.377 7.00003L357.873 7.00003M361.369 7.00003L364.864 7.00003M368.36 7.00003L371.856 7.00003M375.352 7.00003L378.848 7.00003M382.343 7.00003L385.839 7.00003M389.335 7.00003L392.831 7.00003M396.327 7.00003L399.823 7.00003M403.318 7.00003L406.814 7.00003M410.31 7.00003L413.806 7.00003M417.302 7.00003L420.797 7.00003M424.293 7.00003L427.789 7.00003M431.285 7.00003L434.781 7.00003M438.277 7.00003L441.772 7.00004M445.268 7.00004L448.764 7.00004M452.26 7.00004L455.756 7.00004M459.251 7.00004L462.747 7.00004M466.243 7.00004L469.739 7.00004M473.235 7.00004L476.731 7.00004M480.226 7.00004L483.722 7.00004M487.218 7.00004L490.714 7.00004M494.21 7.00004L497.705 7.00004M501.201 7.00004L504.697 7.00004M508.193 7.00004L511.689 7.00004M515.185 7.00004L518.68 7.00004M522.176 7.00004L525.672 7.00004M529.168 7.00004L532.664 7.00004M536.16 7.00004L539.655 7.00004M543.151 7.00004L546.647 7.00004M550.143 7.00004L553.639 7.00004M557.134 7.00005L560.63 7.00005M564.126 7.00005L567.622 7.00005M571.118 7.00005L574.614 7.00005M578.11 7.00005L581.605 7.00005M585.101 7.00005L588.597 7.00005M592.093 7.00005L595.589 7.00005M599.085 7.00005L602.58 7.00005M606.076 7.00005L609.572 7.00005M613.068 7.00005L616.564 7.00005M620.06 7.00005L623.556 7.00005M627.051 7.00005L630.547 7.00005M634.043 7.00005L637.539 7.00005M641.035 7.00005L644.531 7.00005M648.027 7.00005L651.522 7.00005M655.018 7.00005L658.514 7.00005M662.01 7.00005L665.506 7.00005M669.002 7.00005L672.497 7.00006M675.993 7.00006L679.489 7.00006M682.985 7.00006L686.481 7.00006M689.977 7.00006L693.473 7.00006M696.968 7.00006L700.464 7.00006M703.96 7.00006L707.456 7.00006M710.952 7.00006L714.448 7.00006M717.944 7.00006L721.439 7.00006M724.935 7.00006L728.431 7.00006M731.927 7.00006L735.423 7.00006M738.919 7.00006L742.414 7.00006M745.91 7.00006L749.406 7.00006M752.902 7.00006L756.398 7.00006M759.894 7.00006L763.39 7.00006M766.885 7.00006L770.381 7.00006M773.877 7.00006L777.373 7.00006M780.869 7.00006L784.365 7.00006M787.861 7.00007L791.356 7.00007M794.852 7.00007L798.348 7.00007M801.844 7.00007L805.34 7.00007M808.836 7.00007L812.331 7.00007M815.827 7.00007L819.323 7.00007M822.819 7.00007L826.315 7.00007M829.811 7.00007L833.307 7.00007M836.802 7.00007L840.298 7.00007M843.794 7.00007L847.29 7.00007M850.786 7.00007L854.282 7.00007M857.778 7.00007L861.273 7.00007M864.769 7.00007L868.265 7.00007M871.761 7.00007L875.257 7.00007" stroke-linecap="round" stroke-linejoin="round" stroke="#E2E8F0"/>
+                    <path d="M766.203 177.045C809.811 163.948 860.904 182.503 881 193.417V257.25H41V7.5C83.2009 14.9922 110.33 76.5946 117.112 115.72C122.644 147.632 122.89 170.386 152.28 177.045C181.827 183.74 216.859 162.436 246.5 133.577C270.213 110.49 305.615 123.957 320.352 133.577C346.476 150.319 389.51 161.672 424.074 144.579C467.28 123.213 491.144 129.317 545.653 144.579C600.163 159.841 594.636 169.553 640.103 193.417C685.569 217.281 711.694 193.417 766.203 177.045Z" fill="url(#salesNavy)"/>
+                    <path d="M881 193.417C860.904 182.503 809.811 163.948 766.203 177.045C711.694 193.417 685.569 217.281 640.103 193.417C594.636 169.553 600.163 159.841 545.653 144.579C491.144 129.317 467.28 123.213 424.074 144.579C389.51 161.672 346.476 150.319 320.352 133.577C305.615 123.957 270.213 110.49 246.5 133.577C216.859 162.436 181.827 183.74 152.28 177.045C122.89 170.386 122.644 147.632 117.112 115.72C110.33 76.5946 83.201 14.9922 41 7.5" stroke-width="3" stroke="#2D3748"/>
+                    <path d="M154.914 149.957C111.642 136.869 60.9412 155.41 41 166.317V257H880V42.4074C838.123 49.8941 802.55 47.9526 795.82 87.0498C790.331 118.938 790.087 141.675 760.923 148.33C731.603 155.02 714.559 115.887 685.146 87.0498C661.615 63.9798 621.986 94 607.362 103.613C581.439 120.342 522.507 83.8408 496.967 55.148C460.5 14.1781 412.543 10.4308 376.323 55.148C340.104 99.8652 304.178 63.2034 259.061 87.0498C213.944 110.896 209.005 166.317 154.914 149.957Z" fill="url(#salesMint)"/>
+                    <path d="M41 166.5C60.9412 155.579 111.642 137.015 154.914 150.119C209.005 166.5 213.944 111.009 259.061 87.1318C304.178 63.2548 340.104 99.9636 376.323 55.1892C412.543 10.4147 460.5 14.1668 496.967 55.1892C522.507 83.9187 581.439 120.467 607.362 103.716C621.986 94.0909 661.615 64.0322 685.146 87.1318C714.559 116.006 731.603 155.189 760.923 148.49C790.087 141.827 790.331 119.06 795.82 87.1318C802.55 47.9846 838.123 49.9285 880 42.4323" stroke-width="3" stroke="#4FD1C5"/>
+                  </svg>
+                </div>
+
+                <div class="chart-months chart-caption mt-2" aria-hidden="true">
+                  <span>Jan</span>
+                  <span>Feb</span>
+                  <span>Mar</span>
+                  <span>Apr</span>
+                  <span>May</span>
+                  <span>Jun</span>
+                  <span>Jul</span>
+                  <span>Aug</span>
+                  <span>Sep</span>
+                  <span>Oct</span>
+                  <span>Nov</span>
+                  <span>Dec</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Active Users - moved to the second position, 50% -->
+          <div class="col-12 col-lg-6">
+            <article class="app-card h-100">
+              <div class="card-body d-flex flex-column h-100">
+
+                <!-- Activity chart rebuilt from the Figma Graph layer (620 x 222) -->
+                <div class="activity-chart mb-3" role="img" aria-label="Active users bar chart, scale from 0 to 500">
+                  <ul class="activity-axis" aria-hidden="true">
+                    <li>500</li>
+                    <li>400</li>
+                    <li>300</li>
+                    <li>200</li>
+                    <li>100</li>
+                    <li>0</li>
+                  </ul>
+                  <div class="activity-bars" aria-hidden="true">
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                    <span class="activity-bar"></span>
+                  </div>
+                </div>
+
+                <h2 class="card-title h5 mb-1">Active Users</h2>
+                <p class="chart-caption mb-3">
+                  <span class="text-success">(+23)</span> than last week
+                </p>
+
+                <div class="row g-3 mt-auto">
+                  <div class="col-6 col-sm-3">
+                    <p class="stat-label mb-1">
+                      <span class="stat-badge"><svg class="app-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8.6" cy="8.2" r="2.8"/><path d="M3.4 18.4c0-2.7 2.3-4.4 5.2-4.4s5.2 1.7 5.2 4.4"/><circle cx="17" cy="9.4" r="2.1"/><path d="M15.4 13.6c2.4.3 4.2 1.7 4.2 4.2"/></svg></span> Users
+                    </p>
+                    <p class="stat-value mb-2">32,984</p>
+                    <div class="stat-track"><span class="stat-fill stat-fill--users"></span></div>
+                  </div>
+                  <div class="col-6 col-sm-3">
+                    <p class="stat-label mb-1">
+                      <span class="stat-badge"><svg class="app-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.6 3.4 3.6 10.3l6.6 2.7 2.7 6.6z"/><path d="M20.6 3.4 10.2 13"/></svg></span> Clicks
+                    </p>
+                    <p class="stat-value mb-2">2,42m</p>
+                    <div class="stat-track"><span class="stat-fill stat-fill--clicks"></span></div>
+                  </div>
+                  <div class="col-6 col-sm-3">
+                    <p class="stat-label mb-1">
+                      <span class="stat-badge"><svg class="app-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.2 4.2h2.3l2.5 10.6h9.9l2-7.9H6.2"/><circle cx="9.4" cy="19" r="1.3"/><circle cx="16.6" cy="19" r="1.3"/></svg></span> Sales
+                    </p>
+                    <p class="stat-value mb-2">2,400$</p>
+                    <div class="stat-track"><span class="stat-fill stat-fill--sales"></span></div>
+                  </div>
+                  <div class="col-6 col-sm-3">
+                    <p class="stat-label mb-1">
+                      <span class="stat-badge"><svg class="app-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2 3.8 7.4v9.2L12 20.8l8.2-4.2V7.4z"/><path d="M3.8 7.4 12 11.6l8.2-4.2"/><path d="M12 11.6v9.2"/></svg></span> Items
+                    </p>
+                    <p class="stat-value mb-2">320</p>
+                    <div class="stat-track"><span class="stat-fill stat-fill--items"></span></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </section>
+
+        <!-- ================= PROJECTS + ORDERS ================= -->
+        <section class="row g-3" aria-label="Projects and orders">
+
+          <div class="col-12 col-lg-7">
+            <article class="app-card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h2 class="card-title h5 mb-1">Projects</h2>
+                    <p class="chart-caption mb-0">
+                      <img class="caption-icon" src="assets/icons/check-circle.svg" width="15" height="15" alt="Completed projects checkmark"> <span class="caption-strong">30 done</span> this month
+                    </p>
+                  </div>
+                  <!-- Advanced Bootstrap component: modal trigger -->
+                  <button
+                    class="btn btn-primary btn-sm"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                  >
+                    <svg class="ui-icon ui-icon-sm me-1" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 112v288M400 256H112"/></svg> Add project
+                  </button>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table app-table align-middle mb-0">
+                    <caption class="visually-hidden">Projects: company, members, budget and completion</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Companies</th>
+                        <th scope="col">Members</th>
+                        <th scope="col">Budget</th>
+                        <th scope="col">Completion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <img class="company-mark-img" src="assets/icons/proj/proj-chakra-xd.svg" width="20" height="20" alt="Chakra Soft UI Version company mark">
+                          Chakra Soft UI Version
+                        </th>
+                        <td>
+                          <span class="member-avatars">
+                            <img class="member-avatar" src="assets/img/avatar-1.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-2.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-3.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-4.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-5.png" width="20" height="20" alt="Team member avatar">
+                          </span>
+                        </td>
+                        <td>$14,000</td>
+                        <td>
+                          <p class="completion-label mb-1">60%</p>
+                          <div class="progress" role="progressbar" aria-label="Chakra Soft UI Version completion" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar--60"></div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <img class="company-mark-img" src="assets/icons/proj/proj-track.svg" width="20" height="20" alt="Add Progress Track company mark">
+                          Add Progress Track
+                        </th>
+                        <td>
+                          <span class="member-avatars">
+                            <img class="member-avatar" src="assets/img/avatar-1.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-2.png" width="20" height="20" alt="Team member avatar">
+                          </span>
+                        </td>
+                        <td>$3,000</td>
+                        <td>
+                          <p class="completion-label mb-1">10%</p>
+                          <div class="progress" role="progressbar" aria-label="Add Progress Track completion" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar--10"></div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <img class="company-mark-img" src="assets/icons/proj/proj-slack.svg" width="20" height="20" alt="Fix Platform Errors company mark">
+                          Fix Platform Errors
+                        </th>
+                        <td>
+                          <span class="member-avatars">
+                            <img class="member-avatar" src="assets/img/avatar-1.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-2.png" width="20" height="20" alt="Team member avatar">
+                          </span>
+                        </td>
+                        <td>Not set</td>
+                        <td>
+                          <p class="completion-label mb-1">100%</p>
+                          <div class="progress" role="progressbar" aria-label="Fix Platform Errors completion" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar--100"></div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <img class="company-mark-img" src="assets/icons/proj/proj-spotify.svg" width="20" height="20" alt="Launch our Mobile App company mark">
+                          Launch our Mobile App
+                        </th>
+                        <td>
+                          <span class="member-avatars">
+                            <img class="member-avatar" src="assets/img/avatar-1.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-2.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-3.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-4.png" width="20" height="20" alt="Team member avatar">
+                          </span>
+                        </td>
+                        <td>$32,000</td>
+                        <td>
+                          <p class="completion-label mb-1">100%</p>
+                          <div class="progress" role="progressbar" aria-label="Launch our Mobile App completion" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar--100"></div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <img class="company-mark-img" src="assets/icons/proj/proj-sketch.svg" width="20" height="20" alt="Add the New Pricing Page company mark">
+                          Add the New Pricing Page
+                        </th>
+                        <td>
+                          <span class="member-avatars">
+                            <img class="member-avatar" src="assets/img/avatar-1.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-2.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-3.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-4.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-5.png" width="20" height="20" alt="Team member avatar">
+                          </span>
+                        </td>
+                        <td>$400</td>
+                        <td>
+                          <p class="completion-label mb-1">25%</p>
+                          <div class="progress" role="progressbar" aria-label="Add the New Pricing Page completion" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar--25"></div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <img class="company-mark-img" src="assets/icons/proj/proj-invision.svg" width="20" height="20" alt="Redesign New Online Shop company mark">
+                          Redesign New Online Shop
+                        </th>
+                        <td>
+                          <span class="member-avatars">
+                            <img class="member-avatar" src="assets/img/avatar-1.png" width="20" height="20" alt="Team member avatar">
+                            <img class="member-avatar" src="assets/img/avatar-2.png" width="20" height="20" alt="Team member avatar">
+                          </span>
+                        </td>
+                        <td>$7,600</td>
+                        <td>
+                          <p class="completion-label mb-1">40%</p>
+                          <div class="progress" role="progressbar" aria-label="Redesign New Online Shop completion" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar--40"></div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-5">
+            <article class="app-card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5 mb-1">Orders overview</h2>
+                <p class="chart-caption mb-3">
+                  <span class="text-success">+30%</span> this month
+                </p>
+
+                <ul class="list-unstyled mb-0">
+                  <li class="order-item">
+                    <img class="order-icon-img" src="assets/icons/order/order-1.svg" width="16" height="16" alt="Design change order icon">
+                    <div>
+                      <p class="order-title mb-1">$2400, Design changes</p>
+                      <p class="order-time mb-0">22 DEC 7:20 PM</p>
+                    </div>
+                  </li>
+                  <li class="order-item">
+                    <img class="order-icon-img" src="assets/icons/order/order-2.svg" width="16" height="16" alt="New order icon">
+                    <div>
+                      <p class="order-title mb-1">New order #4219423</p>
+                      <p class="order-time mb-0">21 DEC 11:21 PM</p>
+                    </div>
+                  </li>
+                  <li class="order-item">
+                    <img class="order-icon-img" src="assets/icons/order/order-3.svg" width="16" height="16" alt="Server payment order icon">
+                    <div>
+                      <p class="order-title mb-1">Server Payments for April</p>
+                      <p class="order-time mb-0">21 DEC 9:28 PM</p>
+                    </div>
+                  </li>
+                  <li class="order-item">
+                    <img class="order-icon-img" src="assets/icons/order/order-4.svg" width="16" height="16" alt="Payment card order icon">
+                    <div>
+                      <p class="order-title mb-1">New card added for order #3210145</p>
+                      <p class="order-time mb-0">20 DEC 3:52 PM</p>
+                    </div>
+                  </li>
+                  <li class="order-item">
+                    <img class="order-icon-img" src="assets/icons/order/order-5.svg" width="16" height="16" alt="Package order icon">
+                    <div>
+                      <p class="order-title mb-1">Unlock packages for Development</p>
+                      <p class="order-time mb-0">19 DEC 11:35 PM</p>
+                    </div>
+                  </li>
+                  <li class="order-item is-xl">
+                    <img class="order-icon-img is-xl" src="assets/icons/order/order-6.svg" width="20" height="20" alt="New order icon">
+                    <div>
+                      <p class="order-title mb-1">New order #9851258</p>
+                      <p class="order-time mb-0">18 DEC 4:41 PM</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ================= MODAL + FORM ================= -->
+  <div
+    class="modal fade"
+    id="projectModal"
+    tabindex="-1"
+    aria-labelledby="projectModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="projectForm" novalidate>
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="projectModalLabel">Add a new project</h2>
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p class="form-hint mb-3"><span class="required-mark" aria-hidden="true">*</span> Required field</p>
+
+            <div class="mb-3">
+              <label class="form-label" for="projectName">Project name <span class="required-mark" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+              <input
+                class="form-control"
+                id="projectName"
+                name="projectName"
+                type="text"
+                aria-required="true"
+                required
+              >
+              <div class="invalid-feedback">Please enter a project name.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="projectBudget">Budget (CAD) <span class="required-mark" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+              <input
+                class="form-control"
+                id="projectBudget"
+                name="projectBudget"
+                type="number"
+                min="0"
+                step="100"
+                aria-required="true"
+                required
+              >
+              <div class="invalid-feedback">Please enter a budget.</div>
+            </div>
+
+            <div class="mb-0">
+              <label class="form-label" for="projectStage">Stage</label>
+              <select class="form-select" id="projectStage" name="projectStage">
+                <option value="10">Planning - 10%</option>
+                <option value="40">In progress - 40%</option>
+                <option value="75">Review - 75%</option>
+                <option value="100">Done - 100%</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="submit">Save project</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom behaviour -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
