@@ -20,6 +20,7 @@ design, built with **Bootstrap 5.3** and the **Sass** CSS precompiler.
 | Mobile first responsive | Base rules target small screens, `@media (min-width: 992px)` adds the desktop layout |
 | CSS precompiler | Sass source in `src/assets/scss/`, compiled to `src/assets/css/main.css` |
 | Advanced Bootstrap components | Modal + form (`Add project`), offcanvas sidebar on mobile |
+| Remote repo | `https://github.com/JanelleLyu/inm320-assignment-css-framework` |
 
 ## How to run
 
