@@ -1,0 +1,847 @@
+// ============================================================
+// INM320 - CSS Framework Assignment
+// Custom theme built with Sass (CSS precompiler)
+// Mobile first: base rules target small screens, every larger
+// breakpoint is added with @media (min-width: ...)
+// ============================================================
+
+// ------------------------------------------------------------
+// 1. Design tokens
+// ------------------------------------------------------------
+$brand-primary: #4fd1c5;
+$brand-primary-dark: #38b2ac;
+$brand-teal: #14b8a6;
+$color-bg: #f8f9fa;
+$color-card: #ffffff;
+$color-ink: #1c2743;
+$color-ink-soft: #8392ab;
+$color-line: #eef1f8;
+$color-panel: #212a47;
+$radius-card: 15px;
+$shadow-card: 0 3.5px 5.5px rgba(0, 0, 0, 0.02);
+$sidebar-width: 234px;
+$transition-base: 0.25s ease;
+
+// ------------------------------------------------------------
+// 2. Bootstrap variable overrides
+// ------------------------------------------------------------
+:root {
+  --bs-body-bg: #{$color-bg};
+  --bs-body-color: #2d3748;
+  --bs-body-font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --bs-border-color: #e9edf5;
+  --bs-primary: #{$brand-primary};
+  --bs-link-color: #2d3748;
+  --bs-link-hover-color: #{$brand-primary-dark};
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-lg: 1rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: #{$brand-primary};
+  --bs-btn-border-color: #{$brand-primary};
+  --bs-btn-color: #10203a;
+  --bs-btn-hover-bg: #{$brand-primary-dark};
+  --bs-btn-hover-border-color: #{$brand-primary-dark};
+  --bs-btn-hover-color: #10203a;
+  --bs-btn-active-bg: #{$brand-primary-dark};
+  --bs-btn-active-border-color: #{$brand-primary-dark};
+  --bs-btn-focus-shadow-rgb: 29, 233, 182;
+  font-weight: 600;
+}
+
+// ------------------------------------------------------------
+// 3. Base layout
+// ------------------------------------------------------------
+body {
+  min-height: 100vh;
+  letter-spacing: 0; // Figma uses 0% letter spacing
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  transition: color $transition-base;
+}
+
+.app-sidebar {
+  // !important is required because Bootstrap sets the responsive
+  // offcanvas background to transparent at the lg breakpoint.
+  background: $color-bg !important;
+  border-right: 0;
+  color: #7b8aa6;
+  width: $sidebar-width;
+}
+
+.app-sidebar .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  background: $color-bg;
+  min-height: 100vh;
+}
+
+.app-card {
+  background: $color-card;
+  border: 0;
+  border-radius: $radius-card;
+  box-shadow: $shadow-card;
+
+  // Figma card headings are bold #2d3748, not Bootstrap's regular h5 weight
+  .card-title {
+    color: #2d3748;
+    font-size: 18px; // Figma: 18px / 140% / 700
+    font-weight: 700;
+    line-height: 1.4;
+  }
+}
+
+.app-card .card-body {
+  padding: 1.25rem;
+}
+
+// ------------------------------------------------------------
+// 4. Sidebar
+// ------------------------------------------------------------
+.sidebar-brand {
+  align-items: center;
+  color: #2d3748;
+  display: flex;
+  gap: 12px;
+}
+
+.brand-logo {
+  display: block;
+  height: 22px;
+  width: 22px;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #7b61ff;
+  border-radius: 0.45rem;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+// Matches Figma: Helvetica Bold 14px, 150% line height, no tracking
+.brand-text {
+  color: #2d3748;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  small {
+    color: $color-ink-soft;
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+}
+
+.sidebar-section-title {
+  color: #2d3748; // Figma: 12px / 150% / 700
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.sidebar-link {
+  align-items: center;
+  border-radius: 0.65rem;
+  color: #a0aec0; // Figma nav: 12px / 150% / 700
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 0.75rem;
+  line-height: 1.5;
+  padding: 0.6rem 0.65rem;
+  transition: background $transition-base, color $transition-base;
+
+  &:hover,
+  &:focus-visible {
+    background: #f4f7fe;
+    color: #2d3748;
+    outline: none;
+  }
+
+  &.active {
+    background: $color-card;
+    box-shadow: 0 4px 12px rgba(28, 40, 74, 0.1);
+    color: #2d3748; // Figma active nav: 700 / #2d3748
+    font-weight: 700;
+
+    .sidebar-icon {
+      color: $brand-primary;
+    }
+  }
+}
+
+.sidebar-icon {
+  color: #9aa7bf;
+  display: inline-flex;
+  font-size: 0.95rem;
+  width: 1.1rem;
+}
+
+// Figma original sidebar icon (30 x 30 rounded tile)
+.sidebar-icon-img {
+  display: block;
+  flex-shrink: 0;
+  height: 30px;
+  width: 30px;
+}
+
+// ------------------------------------------------------------
+// 5. Page header
+// ------------------------------------------------------------
+.page-title {
+  color: $color-ink;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.page-breadcrumb {
+  color: #a0aec0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  .crumb-root {
+    color: #a0aec0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .crumb-divider {
+    color: #2d3748;
+    margin: 0 9px;
+  }
+
+  .crumb-current {
+    color: #2d3748;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500; // real Medium weight, no synthetic bold
+    line-height: 1.4;
+  }
+}
+
+.required-mark {
+  color: #e53e3e;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.form-hint {
+  color: #a0aec0;
+  font-size: 0.8125rem;
+}
+
+.search-box {
+  background: $color-card;
+  border: 1px solid #e9edf5;
+  border-radius: 0.7rem;
+  max-width: 210px;
+
+  input {
+    background: transparent;
+    border: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}
+
+.header-link {
+  color: $color-ink-soft;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+// ------------------------------------------------------------
+// 6. KPI cards
+// ------------------------------------------------------------
+.kpi-icon {
+  align-items: center;
+  color: $brand-teal;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 3.5rem;
+  justify-content: center;
+  width: 3.5rem;
+}
+
+.kpi-label {
+  color: #a0aec0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.kpi-value {
+  color: #2d3748;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.kpi-delta {
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  &.is-up {
+    color: #48bb78;
+  }
+
+  &.is-down {
+    color: #e53e3e;
+  }
+}
+
+// ------------------------------------------------------------
+// 7. Charts
+// ------------------------------------------------------------
+.chart-caption {
+  color: #a0aec0;
+  font-size: 0.875rem; // 14px in the Figma source
+  line-height: 1.4;
+
+  // Figma checkmark-circle icon: 15 x 15, 6px gap before the label
+  .caption-icon {
+    display: inline-block;
+    height: 15px;
+    margin-right: 6px;
+    vertical-align: -3px;
+    width: 15px;
+  }
+
+  // "30 done" is real Bold in Figma, not synthetic bold
+  .caption-strong {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+
+  // Figma caption accent: Helvetica 700 in #48bb78. Bootstrap's .text-success
+  // is !important, so the override has to match its specificity.
+  .text-success {
+    color: #48bb78 !important;
+    font-weight: 700;
+  }
+}
+
+.chart-frame {
+  padding-left: 2.1rem;
+  position: relative;
+}
+
+.chart-axis {
+  bottom: 0;
+  color: #a0aec0;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.62rem;
+  justify-content: space-between;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 1.6rem;
+}
+
+.area-chart {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+// Activity chart (Active Users) rebuilt from Figma "Graph" 620 x 222
+// x: 98 + 60i, width 7, rx 3.5, baseline 187, label centres 17.45%..82.55%
+.activity-chart {
+  aspect-ratio: 620 / 222;
+  background: linear-gradient(67.7deg, #313860 0%, #151928 100%);
+  border-radius: 12px;
+  container-type: inline-size;
+  position: relative;
+}
+
+.activity-axis {
+  bottom: 14.07%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.613cqw;
+  font-weight: 700;
+  justify-content: space-between;
+  left: 4.84%;
+  line-height: 1.5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: right;
+  top: 14.07%;
+  width: 2.74%;
+}
+
+.activity-bars {
+  align-items: flex-end;
+  bottom: 15.77%;
+  display: flex;
+  justify-content: space-between;
+  left: 15.81%;
+  position: absolute;
+  right: 5.65%;
+  top: 15.09%;
+}
+
+.activity-bar {
+  background: #ffffff;
+  border-radius: 999px;
+  flex: 0 0 1.129%;
+  max-width: 1.129%;
+}
+
+// Bar heights taken from the design comp, in percent of the chart area
+$activity-bar-heights: 64.82%, 46.25%, 24.76%, 57.98%, 100%, 82.41%, 94.14%, 57.98%, 32.57%;
+
+.activity-bars .activity-bar {
+  @for $i from 1 through length($activity-bar-heights) {
+    &:nth-child(#{$i}) {
+      height: nth($activity-bar-heights, $i);
+    }
+  }
+}
+
+.chart-months {
+  display: flex;
+  font-size: 0.62rem;
+  justify-content: space-between;
+  padding-left: 2.1rem;
+}
+
+.stat-label {
+  color: #a0aec0;
+  font-size: 0.7rem;
+  margin-bottom: 0.15rem;
+}
+
+.stat-value {
+  color: $color-ink;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.stat-badge {
+  align-items: center;
+  background: #4fd1c5;
+  border-radius: 0.55rem;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.78rem;
+  height: 1.75rem;
+  justify-content: center;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+  width: 1.75rem;
+}
+
+.stat-track {
+  background: #ebeff7;
+  border-radius: 2px;
+  height: 3px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.stat-fill {
+  background: #4fd1c5;
+  border-radius: 2px;
+  display: block;
+  height: 100%;
+}
+
+.stat-fill--users {
+  width: 42%;
+}
+
+.stat-fill--clicks {
+  width: 55%;
+}
+
+.stat-fill--sales {
+  width: 47%;
+}
+
+.stat-fill--items {
+  width: 62%;
+}
+
+.stat-icon {
+  color: $brand-teal;
+  margin-right: 0.2rem;
+}
+
+// ------------------------------------------------------------
+// 8. Tables and lists
+// ------------------------------------------------------------
+.app-table {
+  font-size: 14px; // Figma table cells: 14px / 140% / 700
+}
+
+.app-table thead th {
+  border-bottom: 1px solid $color-line;
+  color: #a0aec0;
+  font-size: 10px; // Figma thead: 10px / 150% / 700
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.app-table tbody th {
+  border-bottom: 1px solid #f3f5fa;
+  color: #2d3748;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.app-table td {
+  border-bottom: 1px solid #f3f5fa;
+  color: #2d3748;
+  font-weight: 700;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.company-mark {
+  align-items: center;
+  border-radius: 0.35rem;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.65rem;
+  height: 1.35rem;
+  justify-content: center;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+  width: 1.35rem;
+
+  &.is-purple {
+    background: #7b61ff;
+  }
+
+  &.is-blue {
+    background: #4c7dff;
+  }
+
+  &.is-orange {
+    background: #ff8a3d;
+  }
+
+  &.is-green {
+    background: #01b574;
+  }
+
+  &.is-cyan {
+    background: #22c3e6;
+  }
+
+  &.is-pink {
+    background: #f05a8a;
+  }
+}
+
+// Figma original project icon (20 x 20)
+.company-mark-img {
+  display: inline-block;
+  height: 20px;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+  width: 20px;
+}
+
+// Figma "Avatars Group 3 (Horizontal)": one circular avatar per member
+.member-avatars {
+  align-items: center;
+  display: inline-flex;
+  height: 20px;
+}
+
+.member-avatar {
+  border-radius: 50%;
+  border: 2px solid #fff; // Figma 2px white stroke; border-box keeps the ring inside the 20px circle
+  display: block;
+  height: 20px;
+  position: relative;
+  width: 20px;
+
+  & + & {
+    margin-left: -6.52px; // Figma spacing 13.18px for a 19.56px avatar, scaled to 20px
+  }
+}
+
+.avatar-group {
+  display: inline-flex;
+}
+
+.avatar {
+  align-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  font-size: 0.6rem;
+  font-weight: 700;
+  height: 1.55rem;
+  justify-content: center;
+  margin-left: -0.45rem;
+  width: 1.55rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.avatar-1 {
+  background: #ffd7e0;
+  color: #b3324f;
+}
+
+.avatar-2 {
+  background: #d8e3ff;
+  color: #2547a8;
+}
+
+.avatar-3 {
+  background: #d5f5e6;
+  color: #1d7a52;
+}
+
+.completion-label {
+  color: $brand-primary; // Figma: 14px / 140% / 700
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.progress {
+  background: $color-line;
+  border-radius: 999px;
+  height: 0.25rem;
+}
+
+.progress-bar {
+  background: $brand-primary;
+  border-radius: 999px;
+}
+
+.progress-bar--10 {
+  width: 10%;
+}
+
+.progress-bar--25 {
+  width: 25%;
+}
+
+.progress-bar--40 {
+  width: 40%;
+}
+
+.progress-bar--60 {
+  width: 60%;
+}
+
+.progress-bar--100 {
+  width: 100%;
+}
+
+.dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.45rem;
+  margin-right: 0.35rem;
+  width: 0.45rem;
+
+  &.is-green {
+    background: #01b574;
+  }
+}
+
+// ------------------------------------------------------------
+// 9. Orders list
+// ------------------------------------------------------------
+.order-item {
+  --order-icon-offset: 0px;
+  --order-icon-size: 16px;
+  align-items: flex-start;
+  display: flex;
+  gap: 19px; // icon-to-text gap measured from the Figma source
+  padding: 11px 0; // 61px row height measured in the Figma list
+  position: relative;
+
+  // Vertical connector under the icon column: Figma draws a vertical line per
+  // row instead of a horizontal rule between rows.
+  &::before {
+    background: #e3e8ef;
+    border-radius: 2px;
+    bottom: -5px;
+    content: "";
+    // Horizontally centred on the icon column (Figma connector line).
+    left: calc(var(--order-icon-offset) + var(--order-icon-size) / 2 - 1px);
+    position: absolute;
+    top: 35px; // centred in the gap between the icons, as in Figma
+    width: 2px;
+  }
+
+  &:last-child::before {
+    content: none;
+  }
+
+  // The last row uses a 20x20 icon shifted 2px left, keep the connector centred
+  &.is-xl {
+    --order-icon-offset: -2px;
+    --order-icon-size: 20px;
+  }
+}
+
+.order-icon-img {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 16px;
+  width: 16px;
+}
+
+// The last order icon is 20x20 in the source file
+.order-icon-img.is-xl {
+  height: 20px;
+  margin-left: -2px;
+  margin-right: -2px;
+  width: 20px;
+}
+
+.order-icon {
+  align-items: center;
+  border-radius: 0.35rem;
+  color: #ffffff;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.6rem;
+  height: 1.2rem;
+  justify-content: center;
+  width: 1.2rem;
+
+  &.is-blue {
+    background: #4c7dff;
+  }
+
+  &.is-red {
+    background: #e31a1a;
+  }
+
+  &.is-yellow {
+    background: #f5a623;
+  }
+
+  &.is-purple {
+    background: #7b61ff;
+  }
+
+  &.is-dark {
+    background: #2d3748;
+  }
+}
+
+.order-title {
+  color: #2d3748;
+  font-size: 14px; // Figma: 14px / 140% / 700
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.order-time {
+  color: #a0aec0;
+  font-size: 12px; // Figma: 12px / 150% / 700
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+// ------------------------------------------------------------
+// 10. Motion preferences
+// ------------------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+// ------------------------------------------------------------
+// 11. Desktop layout (mobile first, so rules start at lg)
+// ------------------------------------------------------------
+@media (min-width: 992px) {
+  .app-sidebar {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: $sidebar-width;
+  }
+
+  .app-sidebar .offcanvas-body {
+    padding: 1.5rem 18px;
+  }
+
+  .app-main {
+    padding-left: $sidebar-width;
+  }
+}
+
+
+.app-icon {
+  display: block;
+  fill: none;
+  height: 1.15em;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.1;
+  width: 1.15em;
+}
+
+.ui-icon {
+  display: inline-block;
+  fill: none;
+  height: 1.25em;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.1;
+  vertical-align: -0.2em;
+  width: 1.25em;
+}
+
+.ui-icon-sm {
+  height: 1em;
+  width: 1em;
+}
